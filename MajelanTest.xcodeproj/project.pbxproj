@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67557B7A22E7BF0C00D5FFC1 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67557B7922E7BF0C00D5FFC1 /* RecipeViewModel.swift */; };
+		67557B7C22E7BF3500D5FFC1 /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67557B7B22E7BF3500D5FFC1 /* RecipeListViewModel.swift */; };
 		67CFCEB522E7A43C000FE3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFCEB422E7A43C000FE3EF /* AppDelegate.swift */; };
 		67CFCEBA22E7A43C000FE3EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CFCEB822E7A43C000FE3EF /* Main.storyboard */; };
 		67CFCEBC22E7A43D000FE3EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67CFCEBB22E7A43D000FE3EF /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67557B7922E7BF0C00D5FFC1 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		67557B7B22E7BF3500D5FFC1 /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
 		67CFCEB122E7A43C000FE3EF /* MajelanTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MajelanTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CFCEB422E7A43C000FE3EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67CFCEB922E7A43C000FE3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		67557B7822E7BEB300D5FFC1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				67557B7922E7BF0C00D5FFC1 /* RecipeViewModel.swift */,
+				67557B7B22E7BF3500D5FFC1 /* RecipeListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		67CFCEA822E7A43C000FE3EF = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +96,7 @@
 				67CFCEC022E7A43D000FE3EF /* Info.plist */,
 				67CFCEC622E7A471000FE3EF /* Model */,
 				67CFCEC822E7A47E000FE3EF /* View */,
-				67CFCEC922E7A481000FE3EF /* Controller */,
+				67557B7822E7BEB300D5FFC1 /* ViewModel */,
 				67CFCEC722E7A479000FE3EF /* Service */,
 			);
 			path = MajelanTest;
@@ -111,17 +124,10 @@
 				67E48B0C22E7AB6E0044A4DB /* Cell */,
 				67CFCEBD22E7A43D000FE3EF /* LaunchScreen.storyboard */,
 				67CFCEB822E7A43C000FE3EF /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		67CFCEC922E7A481000FE3EF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				67E48B1022E7B2EC0044A4DB /* RecipeDetailsViewController.swift */,
 				67E48B0922E7AA2E0044A4DB /* RecipesListViewController.swift */,
 			);
-			path = Controller;
+			path = View;
 			sourceTree = "<group>";
 		};
 		67E48B0C22E7AB6E0044A4DB /* Cell */ = {
@@ -255,9 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67557B7C22E7BF3500D5FFC1 /* RecipeListViewModel.swift in Sources */,
 				67E48B0A22E7AA2E0044A4DB /* RecipesListViewController.swift in Sources */,
 				67E48B1122E7B2EC0044A4DB /* RecipeDetailsViewController.swift in Sources */,
 				67E48B0E22E7AB810044A4DB /* RecipeTableViewCell.swift in Sources */,
+				67557B7A22E7BF0C00D5FFC1 /* RecipeViewModel.swift in Sources */,
 				67E48B0822E7A5940044A4DB /* Recipe.swift in Sources */,
 				67CFCECB22E7A509000FE3EF /* ApiService.swift in Sources */,
 				67CFCEB522E7A43C000FE3EF /* AppDelegate.swift in Sources */,
