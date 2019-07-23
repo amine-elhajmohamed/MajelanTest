@@ -4,9 +4,10 @@
 target 'MajelanTest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for MajelanTest
   
   pod 'Alamofire', '~> 4.8.2'
-
+  pod 'SDWebImage', '~> 4.4.3'
+  
 end
