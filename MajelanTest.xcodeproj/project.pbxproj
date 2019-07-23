@@ -15,6 +15,7 @@
 		67E48B0822E7A5940044A4DB /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E48B0722E7A5940044A4DB /* Recipe.swift */; };
 		67E48B0A22E7AA2E0044A4DB /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E48B0922E7AA2E0044A4DB /* RecipesListViewController.swift */; };
 		67E48B0E22E7AB810044A4DB /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E48B0D22E7AB810044A4DB /* RecipeTableViewCell.swift */; };
+		67E48B1122E7B2EC0044A4DB /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E48B1022E7B2EC0044A4DB /* RecipeDetailsViewController.swift */; };
 		84081AD956F2D0DE425389D8 /* Pods_MajelanTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FA3F12745FF0F63A01E1C7 /* Pods_MajelanTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		67E48B0722E7A5940044A4DB /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		67E48B0922E7AA2E0044A4DB /* RecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewController.swift; sourceTree = "<group>"; };
 		67E48B0D22E7AB810044A4DB /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		67E48B1022E7B2EC0044A4DB /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		A58B66FF48E5A17FBFCD32F5 /* Pods-MajelanTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MajelanTest.debug.xcconfig"; path = "Target Support Files/Pods-MajelanTest/Pods-MajelanTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B2FA3F12745FF0F63A01E1C7 /* Pods_MajelanTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MajelanTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F0B29DA885E2A6C56DE3BC /* Pods-MajelanTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MajelanTest.release.xcconfig"; path = "Target Support Files/Pods-MajelanTest/Pods-MajelanTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		67CFCEC922E7A481000FE3EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67E48B1022E7B2EC0044A4DB /* RecipeDetailsViewController.swift */,
 				67E48B0922E7AA2E0044A4DB /* RecipesListViewController.swift */,
 			);
 			path = Controller;
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67E48B0A22E7AA2E0044A4DB /* RecipesListViewController.swift in Sources */,
+				67E48B1122E7B2EC0044A4DB /* RecipeDetailsViewController.swift in Sources */,
 				67E48B0E22E7AB810044A4DB /* RecipeTableViewCell.swift in Sources */,
 				67E48B0822E7A5940044A4DB /* Recipe.swift in Sources */,
 				67CFCECB22E7A509000FE3EF /* ApiService.swift in Sources */,

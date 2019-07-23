@@ -8,15 +8,17 @@
 
 import Foundation
 
-struct Recipe: Codable {
+class Recipe: Codable {
+    let id: String
     let title: String
     let imgUrl: String
-    let ingredients: [String]?
+    var ingredients: [String]?
     let rank: Double
     let publisher: String
     let sourceUrl: String
     
     enum CodingKeys: String, CodingKey {
+        case id = "recipe_id"
         case title
         case imgUrl = "image_url"
         case ingredients

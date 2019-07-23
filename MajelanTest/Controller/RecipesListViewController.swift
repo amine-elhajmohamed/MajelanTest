@@ -21,6 +21,8 @@ class RecipesListViewController: UIViewController {
         super.viewDidLoad()
         
         searchBar.delegate = self
+        
+        tableView.delegate = self
         tableView.dataSource = self
         
         updateRecipesData()
@@ -67,6 +69,19 @@ extension RecipesListViewController: UITableViewDataSource {
         cell.loadView(recipe: recipe)
         cell.selectionStyle = .none
         return cell
+    }
+    
+}
+
+//MARK: - extension ViewController: UITableViewDelegate
+extension RecipesListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let recipe = recipes[indexPath.row]
+        
+        let recipeDetailsVC = storyboard?.instantiateViewController(withIdentifier: "RecipeDetailsVC") as! RecipeDetailsViewController
+        recipeDetailsVC.loadView(recipe: recipe)
+        navigationController?.pushViewController(recipeDetailsVC, animated: true)
     }
     
 }
