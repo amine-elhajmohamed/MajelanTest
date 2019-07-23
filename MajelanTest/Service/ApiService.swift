@@ -15,6 +15,7 @@ class ApiService {
     
     private static let baseUrl = "https://www.food2fork.com/api/"
     private static let searchUrl = baseUrl + "search"
+    private static let detailsUrl = baseUrl + "get"
     private static let apiKey = "bb565333aae9420d3d582381acb5d884"
     
     private lazy var sessionManager: SessionManager = {
@@ -57,6 +58,34 @@ class ApiService {
             }
         }
     }
+    
+    func getRecipeDetails(id: String, onComplition: @escaping ((Recipe?)->())){
+        let parameters = ["key":ApiService.apiKey, "rId": id]
+        
+        sessionManager.request(ApiService.detailsUrl, method: .get, parameters: parameters, headers: nil).responseJSON { (dataResponse: DataResponse<Any>) in
+            guard let statusCode = dataResponse.response?.statusCode else {
+                onComplition(nil)
+                return
+            }
+            
+            switch statusCode {
+            case 200:
+                guard let resultValue = dataResponse.result.value as? [String: Any],
+                    let recipeDetailJson = resultValue["recipe"] as? [String: Any],
+                    let recipesDetailJsonData = try? JSONSerialization.data(withJSONObject: recipeDetailJson, options: .prettyPrinted) else {
+                        onComplition(nil)
+                        return
+                }
+                
+                let jsonDecoder = JSONDecoder()
+                let recipe = try? jsonDecoder.decode(Recipe.self, from: recipesDetailJsonData)
+                onComplition(recipe)
+            default:
+                onComplition(nil)
+            }
+        }
+    }
+
     
 }
 
