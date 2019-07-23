@@ -41,11 +41,11 @@ class RecipeTableViewCell: UITableViewCell {
         bgView.layer.cornerRadius = 5
     }
     
-    func loadView(recipe: Recipe){
-        imgView.sd_setImage(with: URL(string: recipe.imgUrl), placeholderImage: UIImage(named: "FoodPlaceHolder.png"), options: [.cacheMemoryOnly, .retryFailed])
-        labelTitle.text = recipe.title
-        labelPublisher.text = recipe.publisher
-        labelRank.text = "\(String(format: "%.2f", recipe.rank))"
+    func loadView(recipeViewModel: RecipeViewModel){
+        imgView.sd_setImage(with: URL(string: recipeViewModel.imgUrl), placeholderImage: UIImage(named: "FoodPlaceHolder.png"), options: [.cacheMemoryOnly, .retryFailed])
+        labelTitle.text = recipeViewModel.title
+        labelPublisher.text = recipeViewModel.publisher
+        labelRank.text = recipeViewModel.rank
     }
     
 }

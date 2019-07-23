@@ -64,8 +64,8 @@
 		67557B7822E7BEB300D5FFC1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				67557B7922E7BF0C00D5FFC1 /* RecipeViewModel.swift */,
 				67557B7B22E7BF3500D5FFC1 /* RecipeListViewModel.swift */,
+				67557B7922E7BF0C00D5FFC1 /* RecipeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -124,8 +124,8 @@
 				67E48B0C22E7AB6E0044A4DB /* Cell */,
 				67CFCEBD22E7A43D000FE3EF /* LaunchScreen.storyboard */,
 				67CFCEB822E7A43C000FE3EF /* Main.storyboard */,
-				67E48B1022E7B2EC0044A4DB /* RecipeDetailsViewController.swift */,
 				67E48B0922E7AA2E0044A4DB /* RecipesListViewController.swift */,
+				67E48B1022E7B2EC0044A4DB /* RecipeDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

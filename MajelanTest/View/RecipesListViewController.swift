@@ -13,44 +13,43 @@ class RecipesListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    private var recipes: [Recipe] = []
-    
+    private var recipeListViewModel: RecipeListViewModel!
     private var timerForUpdatingRecipesData: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureUI()
+    }
+    
+    private func configureUI(){
         searchBar.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        updateRecipesData()
-    }
-    
-    private func updateRecipesData(){
-        let searchText = searchBar.text ?? ""
+        recipeListViewModel = RecipeListViewModel()
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
-        ApiService.shared.searchRecipes(searchText) { [weak self] (recipes: [Recipe]?) in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            
-            guard let self = self else {
-                return
-            }
-            
-            if (recipes == nil) {
-                let alertVC = UIAlertController(title: "Failed to load the data", message: "Please try again later", preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                self.present(alertVC, animated: true, completion: nil)
-                return
-            }
-            
-            self.recipes = recipes!
-            self.tableView.reloadData()
-            self.tableView.setContentOffset(CGPoint.zero, animated: false)
+        recipeListViewModel.didUpdateRecipeList = { [weak self] in
+            self?.tableView.reloadData()
+            self?.tableView.setContentOffset(CGPoint.zero, animated: false)
         }
+        
+        recipeListViewModel.didFailToUpdateRecipeList = { [weak self] in
+            let alertVC = UIAlertController(title: "Failed to load the data", message: "Please try again later", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self?.present(alertVC, animated: true, completion: nil)
+        }
+        
+        recipeListViewModel.loadingStatuChanged = { [weak self] in
+            if let isLoading = self?.recipeListViewModel.isLoading, isLoading {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            } else {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }
+        }
+        
+        recipeListViewModel.search("")
     }
     
 }
@@ -59,14 +58,14 @@ class RecipesListViewController: UIViewController {
 extension RecipesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count
+        return recipeListViewModel.getListCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let recipe = recipes[indexPath.row]
+        let recipeViewModel = recipeListViewModel.getRecipeViewModel(forRow: indexPath.row)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell") as! RecipeTableViewCell
-        cell.loadView(recipe: recipe)
+        cell.loadView(recipeViewModel: recipeViewModel)
         cell.selectionStyle = .none
         return cell
     }
@@ -77,10 +76,10 @@ extension RecipesListViewController: UITableViewDataSource {
 extension RecipesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let recipe = recipes[indexPath.row]
+        let recipeViewModel = recipeListViewModel.getRecipeViewModel(forRow: indexPath.row)
         
         let recipeDetailsVC = storyboard?.instantiateViewController(withIdentifier: "RecipeDetailsVC") as! RecipeDetailsViewController
-        recipeDetailsVC.loadView(recipe: recipe)
+        recipeDetailsVC.loadView(recipeViewModel: recipeViewModel)
         navigationController?.pushViewController(recipeDetailsVC, animated: true)
     }
     
@@ -96,7 +95,7 @@ extension RecipesListViewController: UISearchBarDelegate {
             guard let self = self else {
                 return
             }
-            self.updateRecipesData()
+            self.recipeListViewModel.search(searchText)
         })
     }
     
