@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		67CFCEB522E7A43C000FE3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFCEB422E7A43C000FE3EF /* AppDelegate.swift */; };
-		67CFCEB722E7A43C000FE3EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFCEB622E7A43C000FE3EF /* ViewController.swift */; };
 		67CFCEBA22E7A43C000FE3EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CFCEB822E7A43C000FE3EF /* Main.storyboard */; };
 		67CFCEBC22E7A43D000FE3EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67CFCEBB22E7A43D000FE3EF /* Assets.xcassets */; };
 		67CFCEBF22E7A43D000FE3EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CFCEBD22E7A43D000FE3EF /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		67CFCEB122E7A43C000FE3EF /* MajelanTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MajelanTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CFCEB422E7A43C000FE3EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		67CFCEB622E7A43C000FE3EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		67CFCEB922E7A43C000FE3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67CFCEBB22E7A43D000FE3EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67CFCEBE22E7A43D000FE3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,13 +53,44 @@
 			isa = PBXGroup;
 			children = (
 				67CFCEB422E7A43C000FE3EF /* AppDelegate.swift */,
-				67CFCEB622E7A43C000FE3EF /* ViewController.swift */,
-				67CFCEB822E7A43C000FE3EF /* Main.storyboard */,
 				67CFCEBB22E7A43D000FE3EF /* Assets.xcassets */,
-				67CFCEBD22E7A43D000FE3EF /* LaunchScreen.storyboard */,
 				67CFCEC022E7A43D000FE3EF /* Info.plist */,
+				67CFCEC622E7A471000FE3EF /* Model */,
+				67CFCEC822E7A47E000FE3EF /* View */,
+				67CFCEC922E7A481000FE3EF /* Controller */,
+				67CFCEC722E7A479000FE3EF /* Service */,
 			);
 			path = MajelanTest;
+			sourceTree = "<group>";
+		};
+		67CFCEC622E7A471000FE3EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67CFCEC722E7A479000FE3EF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		67CFCEC822E7A47E000FE3EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				67CFCEBD22E7A43D000FE3EF /* LaunchScreen.storyboard */,
+				67CFCEB822E7A43C000FE3EF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67CFCEC922E7A481000FE3EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +164,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67CFCEB722E7A43C000FE3EF /* ViewController.swift in Sources */,
 				67CFCEB522E7A43C000FE3EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +311,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MajelanTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -291,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aminehajmohamed.MajelanTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -300,7 +330,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MajelanTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aminehajmohamed.MajelanTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
