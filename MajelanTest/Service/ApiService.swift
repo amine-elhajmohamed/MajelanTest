@@ -16,7 +16,7 @@ class ApiService {
     private static let baseUrl = "https://www.food2fork.com/api/"
     private static let searchUrl = baseUrl + "search"
     private static let detailsUrl = baseUrl + "get"
-    private static let apiKey = "bb565333aae9420d3d582381acb5d884"
+    private static let apiKey = "1ec030682addff45b9199a4269dfed77"
     
     private lazy var sessionManager: SessionManager = {
         let configuration = URLSessionConfiguration.default
