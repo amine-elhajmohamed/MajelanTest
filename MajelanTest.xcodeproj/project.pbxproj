@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		67CFCEBA22E7A43C000FE3EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CFCEB822E7A43C000FE3EF /* Main.storyboard */; };
 		67CFCEBC22E7A43D000FE3EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67CFCEBB22E7A43D000FE3EF /* Assets.xcassets */; };
 		67CFCEBF22E7A43D000FE3EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CFCEBD22E7A43D000FE3EF /* LaunchScreen.storyboard */; };
+		67CFCECB22E7A509000FE3EF /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CFCECA22E7A509000FE3EF /* ApiService.swift */; };
+		67E48B0822E7A5940044A4DB /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E48B0722E7A5940044A4DB /* Recipe.swift */; };
+		84081AD956F2D0DE425389D8 /* Pods_MajelanTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FA3F12745FF0F63A01E1C7 /* Pods_MajelanTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,11 @@
 		67CFCEBB22E7A43D000FE3EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67CFCEBE22E7A43D000FE3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67CFCEC022E7A43D000FE3EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67CFCECA22E7A509000FE3EF /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		67E48B0722E7A5940044A4DB /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		A58B66FF48E5A17FBFCD32F5 /* Pods-MajelanTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MajelanTest.debug.xcconfig"; path = "Target Support Files/Pods-MajelanTest/Pods-MajelanTest.debug.xcconfig"; sourceTree = "<group>"; };
+		B2FA3F12745FF0F63A01E1C7 /* Pods_MajelanTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MajelanTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3F0B29DA885E2A6C56DE3BC /* Pods-MajelanTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MajelanTest.release.xcconfig"; path = "Target Support Files/Pods-MajelanTest/Pods-MajelanTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84081AD956F2D0DE425389D8 /* Pods_MajelanTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2337157D1CEE563A93FE4FE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A58B66FF48E5A17FBFCD32F5 /* Pods-MajelanTest.debug.xcconfig */,
+				E3F0B29DA885E2A6C56DE3BC /* Pods-MajelanTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		67CFCEA822E7A43C000FE3EF = {
 			isa = PBXGroup;
 			children = (
 				67CFCEB322E7A43C000FE3EF /* MajelanTest */,
 				67CFCEB222E7A43C000FE3EF /* Products */,
+				2337157D1CEE563A93FE4FE0 /* Pods */,
+				BB008C8B407A1905B8CA4B47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +86,7 @@
 		67CFCEC622E7A471000FE3EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				67E48B0722E7A5940044A4DB /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -73,6 +94,7 @@
 		67CFCEC722E7A479000FE3EF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				67CFCECA22E7A509000FE3EF /* ApiService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -93,6 +115,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		BB008C8B407A1905B8CA4B47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2FA3F12745FF0F63A01E1C7 /* Pods_MajelanTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67CFCEC322E7A43D000FE3EF /* Build configuration list for PBXNativeTarget "MajelanTest" */;
 			buildPhases = (
+				53E49CE70894BE7BE7FD01D2 /* [CP] Check Pods Manifest.lock */,
 				67CFCEAD22E7A43C000FE3EF /* Sources */,
 				67CFCEAE22E7A43C000FE3EF /* Frameworks */,
 				67CFCEAF22E7A43C000FE3EF /* Resources */,
+				D51B28A2FABAC19BFC7B078E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,11 +191,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		53E49CE70894BE7BE7FD01D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MajelanTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D51B28A2FABAC19BFC7B078E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MajelanTest/Pods-MajelanTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MajelanTest/Pods-MajelanTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MajelanTest/Pods-MajelanTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		67CFCEAD22E7A43C000FE3EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E48B0822E7A5940044A4DB /* Recipe.swift in Sources */,
+				67CFCECB22E7A509000FE3EF /* ApiService.swift in Sources */,
 				67CFCEB522E7A43C000FE3EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +384,7 @@
 		};
 		67CFCEC422E7A43D000FE3EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A58B66FF48E5A17FBFCD32F5 /* Pods-MajelanTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +404,7 @@
 		};
 		67CFCEC522E7A43D000FE3EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3F0B29DA885E2A6C56DE3BC /* Pods-MajelanTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
